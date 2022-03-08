@@ -1,0 +1,1037 @@
+{
+    "ResultData": {
+        "ctype": "page",
+        "uuid": "pageUUID",
+        "visibility": true,
+        "hooks": [
+            {
+                "type": "microservice",
+                "hookType": "afterInit",
+                "config": {
+                    "microserviceId": "getSubProcessPageBody",
+                    "requestMethod": "get",
+                    "params": {},
+                    "isLocal": true,
+                    "LocalService": "assets/Responses/truData.json"
+                },
+                "responseDependents": {
+                    "onSuccess": {
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "sanniData",
+                                    "data": "responseData"
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "CiscoDebugSubAssmUUID",
+                                    "dropDownProperties": {
+                                        "options": "#sanniData"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "onFailure": {
+                        "actions": [
+                            {
+                                "ctype": "title",
+                                "uuid": "errorTitleUUID",
+                                "containerId": "prebodysectionone",
+                                "titleClass": "error-title",
+                                "isShown": false
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "type": "microservice",
+                "hookType": "afterInit",
+                "config": {
+                    "microserviceId": "getSubProcessPageBody",
+                    "requestMethod": "get",
+                    "params": {},
+                    "isLocal": true,
+                    "LocalService": "assets/Responses/trueDataOne.json"
+                },
+                "responseDependents": {
+                    "onSuccess": {
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "predictionDataOne",
+                                    "data": "responseData"
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "dellwurdebugadddefectUUID",
+                                    "dropDownProperties": {
+                                        "options": "#predictionDataOne"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "dellwurdebugadddefectGroupUUID",
+                                    "dropDownProperties": {
+                                        "options": "#predictionDataOne"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "dellwurdebugadddefectUUID",
+                                    "dropDownProperties": {
+                                        "options": "#predictionDataOne"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "onFailure": {
+                        "actions": [
+                            {
+                                "ctype": "title",
+                                "uuid": "errorTitleUUID",
+                                "containerId": "prebodysectionone",
+                                "titleClass": "error-title",
+                                "isShown": false
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "header": [
+            {
+                "ctype": "breadcrumb",
+                "breadcrumbs": [
+                    {
+                        "label": "TOR/LOU"
+                    },
+                    {
+                        "label": "Dell"
+                    },
+                    {
+                        "label": "Dell WUR"
+                    }
+                ]
+            },
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "pagecontent-header",
+                "items": [
+                    {
+                        "ctype": "title",
+                        "titleValue": "Repair:Debug"
+                    }
+                ]
+            }
+        ],
+        "items": [
+            {
+                "ctype": "title",
+                "uuid": "errorTitleUUID",
+                "containerId": "prebodysectionone",
+                "titleClass": "error-title",
+                "isShown": true
+            },
+            {
+                "ctype": "taskPanel",
+                "uuid": "lastNoteUUID",
+                "visibility": true,
+                "containerId": "prebodysectionone",
+                "isblueBorder": true,
+                "header": {
+                    "title": "Last Note",
+                    "svgIcon": "description_icon",
+                    "iconClass": "active-header",
+                    "statusIcon": "check_circle",
+                    "statusClass": "incomplete-status",
+                    "class": "po-specific"
+                },
+                "hideToggle": true,
+                "expanded": false,
+                "disabled": false,
+                "hooks": [],
+                "validations": [],
+                "actions": [],
+                "items": [
+                    {
+                        "ctype": "label",
+                        "labelClass": "greyish-black  body-italic",
+                        "text": "Confirm Details below"
+                    }
+                ]
+            },
+            {
+                "ctype": "taskPanel",
+                "uuid": "repairInformationUUID",
+                "visibility": true,
+                "containerId": "prebodysectionone",
+                "isblueBorder": true,
+                "hideToggle": true,
+                "expanded": false,
+                "disabled": false,
+                "header": {
+                    "title": "Repair Information",
+                    "svgIcon": "description_icon",
+                    "iconClass": "active-header",
+                    "statusIcon": "hourglass_empty",
+                    "statusClass": "incomplete-status",
+                    "class": "po-specific"
+                },
+                "hooks": [],
+                "validations": [],
+                "actions": [],
+                "items": [
+                    {
+                        "ctype": "title",
+                        "labelClass": "",
+                        "title": "Customer Complaint 2020-07-22. 12.02"
+                    },
+                    {
+                        "ctype": "label",
+                        "labelClass": "greyish-black  body-italic",
+                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes,"
+                    },
+                    {
+                        "ctype": "title",
+                        "labelClass": "",
+                        "title": "Special Message",
+                        "css": "padding-top:30px;"
+                    },
+                    {
+                        "ctype": "label",
+                        "labelClass": "greyish-black  body-italic",
+                        "text": "Special Message sample - Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar condimentum vehicula. Sed eros erat, vehicula a convallis et, ullamcorper a nibh. Fusce vitae nibh sed arcu ultricies euismod ac at nibh. Integer non egestas diam. Aenean sit amet varius sem. Etiam at purus tellus. Nam in elit felis. Quisque mollis rhoncus dolor, eu aliquam elit ullamcorper eget. Curabitur aliquet lacus id libero tincidunt dapibus."
+                    },
+                    {
+                        "ctype": "checkbox",
+                        "label": "i have read this message",
+                        "required": true,
+                        "submitable": true,
+                        "value": "check",
+                        "labelPosition": "after",
+                        "checkVisibility": true,
+                        "checkboxContainer": "label-init",
+                        "labelClass": "",
+                        "iconClass": "",
+                        "class": "",
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "checkboxRepairInformation",
+                                    "data": "elementControlValue"
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "condition",
+                                "eventSource": "click",
+                                "config": {
+                                    "operation": "isEqualTo",
+                                    "lhs": "#checkboxRepairInformation",
+                                    "rhs": true
+                                },
+                                "responseDependents": {
+                                    "onSuccess": {
+                                        "actions": [
+                                            {
+                                                "type": "updateComponent",
+                                                "config": {
+                                                    "key": "dellAssemblyMessageButtonSubmittedUUID",
+                                                    "properties": {
+                                                        "disabled": false
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "onFailure": {
+                                        "actions": [
+                                            {
+                                                "type": "updateComponent",
+                                                "config": {
+                                                    "key": "dellAssemblyMessageButtonSubmittedUUID",
+                                                    "properties": {
+                                                        "disabled": true
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "footer": [
+                    {
+                        "ctype": "button",
+                        "color": "primary",
+                        "text": "Complete",
+                        "class": "primary-btn",
+                        "buttonClass": "primary-btn-full-width",
+                        "uuid": "dellAssemblyMessageButtonSubmittedUUID",
+                        "type": "submit",
+                        "disabled": true,
+                        "visibility": true,
+                        "hooks": [],
+                        "validation": [],
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "completeButtonRepairInformaion",
+                                    "data": "rawFormData"
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "repairInformationUUID",
+                                    "properties": {
+                                        "expanded": false,
+                                        "disabled": false,
+                                        "header": {
+                                            "title": "Repair Information",
+                                            "svgIcon": "description_icon",
+                                            "statusIcon": "check_circle",
+                                            "statusClass": "complete-status",
+                                            "class": "greyish-black subtitle1 font-weight-700",
+                                            "iconClass": "complete-task"
+                                        }
+                                    }
+                                },
+                                "eventSource": "click"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "debug_toolbar",
+                "uuid": "predictionToolbarUUID",
+                "hoverClass": "",
+                "css": "cursor:pointer;",
+                "items": [
+                    {
+                        "ctype": "iconText",
+                        "text": "PREDICTION: AUDIO FAILURE CABLE ISSUE",
+                        "uuid": "sanUUID",
+                        "textClass": "heading3-regular greyish-black",
+                        "actions": [
+                            {
+                                "type": "createComponent",
+                                "eventSource": "click",
+                                "config": {
+                                    "targetId": "pageUUID",
+                                    "containerId": "prebodysectiontwo",
+                                    "data": {
+                                        "ctype": "taskPanel",
+                                        "header": {
+                                            "title": "PREDICTION: AUDIO FAILURE CABLE ISSUE"
+                                        },
+                                        "items": [
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "uuid": "dellwurdebugadddefectGroupUUID",
+                                                "name": "addDefectGroupName",
+                                                "label": "Defect Group",
+                                                "formGroupClass": "flex-container flex-container-half-width form-group",
+                                                "dropdownClass": "dropdown-container condition-dropdwn body2",
+                                                "labelClass": "body2 dell-greyish-black",
+                                                "required": true,
+                                                "disabled": true,
+                                                "code": "predidcted_class",
+                                                "displayValue": "predidcted_class",
+                                                "dataSource": "#getDefectGroupList",
+                                                "isDisableNotReq": true
+                                            },
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "uuid": "dellwurdebugadddefectUUID",
+                                                "name": "addDefectName",
+                                                "label": "Defect",
+                                                "formGroupClass": "flex-container flex-container-half-width form-group",
+                                                "dropdownClass": "dropdown-container condition-dropdwn body2",
+                                                "labelClass": "body2 dell-greyish-black",
+                                                "required": true,
+                                                "disabled": false,
+                                                "code": "value",
+                                                "visibility": true,
+                                                "dataSource": "#predictionDataOne",
+                                                "displayValue": "value",
+                                                "isDisableNotReq": true
+                                            }
+                                        ],
+                                        "footer": [
+                                            {
+                                                "ctype": "button",
+                                                "text": "Reject",
+                                                "type": "submit",
+                                                "submitable": true,
+                                                "uuid": "acceptpredictionUUID",
+                                                "buttonClass": "margin-right-50",
+                                                "class": "dell-debug1-delete-button my-color changeMissing",
+                                                "visibility": true,
+                                                "disabled": false,
+                                                "bgcolor": "transparent",
+                                                "color": "blue"
+                                            },
+                                            {
+                                                "ctype": "button",
+                                                "text": "Accept",
+                                                "type": "submit",
+                                                "submitable": true,
+                                                "uuid": "rejectpredictionUUID",
+                                                "buttonClass": "",
+                                                "class": "cellExcRejectIcons footer-button primary-btn",
+                                                "visibility": true,
+                                                "disabled": false,
+                                                "bgcolor": "transparent",
+                                                "color": "primary"
+                                            }
+                                        ],
+                                        "expanded": true,
+                                        "hideToggle": true,
+                                        "taskPanelHeaderClass": "task-panel-header-color-light-grey",
+                                        "uuid": "softwareTaskUUID",
+                                        "visibility": true
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "debug_toolbar margin-top-10",
+                "uuid": "predictionToolbarOneUUID",
+                "hoverClass": "",
+                "css": "cursor:pointer;",
+                "items": [
+                    {
+                        "ctype": "iconText",
+                        "text": "PREDICTION: BURN/STRESS BURNED AC ADAPTOR",
+                        "textClass": "heading3-regular greyish-black",
+                        "actions": [
+                            {
+                                "type": "createComponent",
+                                "eventSource": "click",
+                                "config": {
+                                    "targetId": "pageUUID",
+                                    "containerId": "prebodysectiontwo",
+                                    "data": {
+                                        "ctype": "taskPanel",
+                                        "header": {
+                                            "title": "PREDICTION: BURN/STRESS BURNED AC ADAPTOR",
+                                            "headerClasses": "debug_toolbar"
+                                        },
+                                        "items": [
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "uuid": "dellwurdebugadddefectGroupUUID",
+                                                "name": "addDefectGroupName",
+                                                "label": "Defect Group",
+                                                "formGroupClass": "flex-container flex-container-half-width form-group",
+                                                "dropdownClass": "dropdown-container condition-dropdwn body2",
+                                                "labelClass": "body2 dell-greyish-black",
+                                                "required": true,
+                                                "disabled": true,
+                                                "code": "predidcted_class",
+                                                "displayValue": "predidcted_class",
+                                                "dataSource": "#getDefectGroupList",
+                                                "isDisableNotReq": true
+                                            },
+                                            {
+                                                "ctype": "nativeDropdown",
+                                                "uuid": "dellwurdebugadddefectUUID",
+                                                "name": "addDefectName",
+                                                "label": "Defect",
+                                                "formGroupClass": "flex-container flex-container-half-width form-group",
+                                                "dropdownClass": "dropdown-container condition-dropdwn body2",
+                                                "labelClass": "body2 dell-greyish-black",
+                                                "required": true,
+                                                "disabled": false,
+                                                "code": "value",
+                                                "visibility": true,
+                                                "dataSource": "#predictionDataOne",
+                                                "displayValue": "value",
+                                                "isDisableNotReq": true
+                                            }
+                                        ],
+                                        "footer": [
+                                            {
+                                                "ctype": "button",
+                                                "text": "Reject",
+                                                "type": "submit",
+                                                "submitable": true,
+                                                "uuid": "acceptpredictionUUID",
+                                                "buttonClass": "margin-right-50",
+                                                "class": "dell-debug1-delete-button my-color changeMissing",
+                                                "visibility": true,
+                                                "disabled": false,
+                                                "bgcolor": "transparent",
+                                                "color": "blue"
+                                            },
+                                            {
+                                                "ctype": "button",
+                                                "text": "Accept",
+                                                "type": "submit",
+                                                "submitable": true,
+                                                "uuid": "rejectpredictionUUID",
+                                                "buttonClass": "",
+                                                "class": "cellExcRejectIcons footer-button primary-btn",
+                                                "visibility": true,
+                                                "disabled": false,
+                                                "bgcolor": "transparent",
+                                                "color": "primary"
+                                            }
+                                        ],
+                                        "expanded": true,
+                                        "hideToggle": true,
+                                        "taskPanelHeaderClass": "task-panel-header-color-light-grey",
+                                        "uuid": "softwareTaskOneUUID",
+                                        "visibility": true
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ctype": "PredictionTaskPanel",
+                "containerId": "bodypage",
+                "uuid": "AddDefectPredictionTaskPanelUUID",
+                "hideexpansion": false,
+                "actions": [],
+                "hooks": [],
+                "header": {
+                    "title": "ADD DEFECT",
+                    "class": "text-underline "
+                },
+                "expanded": false,
+                "hideToggle": "true",
+                "toggleExpanded": false,
+                "hidden": false,
+                "isKeepExpanded": false,
+                "isBasedOnApiData": true,
+                "isMandatory": false,
+                "isEditable": true,
+                "visibility": true,
+                "validations": [],
+                "toolBarItems": [
+                    {
+                        "ctype": "toolbar",
+                        "toolbarClass": "prediction-Toolbar creatorTask-Toolbar",
+                        "hoverClass": "",
+                        "items": [
+                            {
+                                "ctype": "iconText",
+                                "hoverClass": "blue-icon",
+                                "svgIcon": "replace",
+                                "text": "Replace",
+                                "iconTextClass": "creatorTask-Icontext",
+                                "uuid": "dellDebugReplaceIconUUID",
+                                "textClass": "heading3-regular greyish-black",
+                                "iconPosition": "top",
+                                "actions": [
+                                    {
+                                        "type": "updateComponent",
+                                        "eventSource": "click",
+                                        "config": {
+                                            "key": "errorTitleUUID",
+                                            "properties": {
+                                                "titleValue": "",
+                                                "isShown": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "handleDellDebugPRActions",
+                                        "methodType": "handleDellProcessActions",
+                                        "eventSource": "click",
+                                        "isNewPredictiveTask": true,
+                                        "config": {
+                                            "svgIcon": "replace",
+                                            "text": "Replace Part",
+                                            "processType": "replace",
+                                            "targetId": "AddDefectPredictionTaskPanelUUID"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "ctype": "iconText",
+                                "hoverClass": "blue-icon",
+                                "svgIcon": "software",
+                                "text": "Software",
+                                "iconTextClass": "creatorTask-Icontext",
+                                "uuid": "dellDebugSoftwareIconUUID",
+                                "textClass": "heading3-regular greyish-black",
+                                "iconPosition": "top",
+                                "actions": [
+                                    {
+                                        "type": "updateComponent",
+                                        "eventSource": "click",
+                                        "config": {
+                                            "key": "errorTitleUUID",
+                                            "properties": {
+                                                "titleValue": "",
+                                                "isShown": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "handleDellDebugPRActions",
+                                        "methodType": "handleDellProcessActions",
+                                        "eventSource": "click",
+                                        "isNewPredictiveTask": true,
+                                        "config": {
+                                            "svgIcon": "software",
+                                            "text": "Software",
+                                            "targetId": "AddDefectPredictionTaskPanelUUID",
+                                            "processType": "software"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "ctype": "iconText",
+                                "hoverClass": "blue-icon",
+                                "svgIcon": "manual",
+                                "text": "Reseat",
+                                "iconTextClass": "creatorTask-Icontext",
+                                "uuid": "dellDebugReseatIconUUID",
+                                "textClass": "heading3-regular greyish-black",
+                                "iconPosition": "top",
+                                "actions": [
+                                    {
+                                        "type": "updateComponent",
+                                        "eventSource": "click",
+                                        "config": {
+                                            "key": "errorTitleUUID",
+                                            "properties": {
+                                                "titleValue": "",
+                                                "isShown": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "handleDellDebugPRActions",
+                                        "methodType": "handleDellProcessActions",
+                                        "eventSource": "click",
+                                        "isNewPredictiveTask": true,
+                                        "config": {
+                                            "svgIcon": "manual",
+                                            "targetId": "AddDefectPredictionTaskPanelUUID",
+                                            "text": "Reseat",
+                                            "processType": "reseat"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "ctype": "iconText",
+                                "hoverClass": "blue-icon",
+                                "svgIcon": "description",
+                                "text": "Other",
+                                "iconTextClass": "creatorTask-Icontext",
+                                "uuid": "dellDebugOtherIconUUID",
+                                "textClass": "heading3-regular greyish-black",
+                                "iconPosition": "top",
+                                "actions": [
+                                    {
+                                        "type": "updateComponent",
+                                        "eventSource": "click",
+                                        "config": {
+                                            "key": "errorTitleUUID",
+                                            "properties": {
+                                                "titleValue": "",
+                                                "isShown": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "handleDellDebugPRActions",
+                                        "methodType": "handleDellProcessActions",
+                                        "isNewPredictiveTask": true,
+                                        "eventSource": "click",
+                                        "config": {
+                                            "svgIcon": "description",
+                                            "targetId": "AddDefectPredictionTaskPanelUUID",
+                                            "text": "Other",
+                                            "processType": "other"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "items": [
+                    {
+                        "ctype": "nativeDropdown",
+                        "uuid": "dellwurdebugadddefectGroupUUID",
+                        "name": "addDefectGroupName",
+                        "label": "Defect Group",
+                        "formGroupClass": "flex-container flex-container-half-width form-group",
+                        "dropdownClass": "dropdown-container condition-dropdwn body2",
+                        "labelClass": "body2 dell-greyish-black",
+                        "required": true,
+                        "disabled": false,
+                        "code": "value",
+                        "displayValue": "value",
+                        "dataSource": "#predictionDataOne",
+                        "isDisableNotReq": true,
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "dellDebugNewAddDefectGroupName",
+                                    "data": "elementControlValue"
+                                },
+                                "eventSource": "change"
+                            },
+                            {
+                                "type": "extractValueBasedOnKey",
+                                "eventSource": "change",
+                                "config": {
+                                    "data": "getDefectGroupList",
+                                    "reqKey": "predidcted_class",
+                                    "reqValue": "#dellDebugNewAddDefectGroupName",
+                                    "key": "filteredDefectsBasedOnDefectGroup"
+                                }
+                            },
+                            {
+                                "type": "updateComponent",
+                                "eventSource": "change",
+                                "config": {
+                                    "key": "dellwurdebugadddefectUUID",
+                                    "dropDownProperties": {
+                                        "options": "#filteredDefectsBasedOnDefectGroup.possible_defect_child"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "resetControl",
+                                "config": {
+                                    "key": "adddefectName"
+                                },
+                                "eventSource": "change"
+                            },
+                            {
+                                "type": "updateComponent",
+                                "config": {
+                                    "key": "dellwurdebugaddButtonUUID",
+                                    "properties": {
+                                        "disabled": true
+                                    }
+                                },
+                                "eventSource": "change"
+                            }
+                        ]
+                    },
+                    {
+                        "ctype": "nativeDropdown",
+                        "uuid": "dellwurdebugadddefectUUID",
+                        "name": "adddefectName",
+                        "label": "Defect",
+                        "formGroupClass": "flex-container flex-container-half-width form-group",
+                        "dropdownClass": "dropdown-container condition-dropdwn body2",
+                        "labelClass": "body2 dell-greyish-black",
+                        "required": true,
+                        "code": "value",
+                        "displayValue": "value",
+                        "dataSource": "#predictionDataOne",
+                        "isDisableNotReq": true,
+                        "disabled": false,
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "dellDebugAddPredictiveUnqNumber",
+                                    "data": "elementControlValue"
+                                },
+                                "eventSource": "change"
+                            },
+                            {
+                                "type": "context",
+                                "config": {
+                                    "requestMethod": "add",
+                                    "key": "dellDebugNewAddDefectName",
+                                    "data": "elementControlName"
+                                },
+                                "eventSource": "change"
+                            }
+                        ]
+                    }
+                ],
+                "footer": [
+                    {
+                        "ctype": "button",
+                        "color": "primary",
+                        "text": "Add",
+                        "name": "dellwurdebugAcceptName",
+                        "class": "primary-btn",
+                        "uuid": "dellwurdebugaddButtonUUID",
+                        "visibility": true,
+                        "isDisableNotReq": true,
+                        "disabled": true,
+                        "type": "submit",
+                        "tooltip": "",
+                        "hooks": [],
+                        "validations": [],
+                        "actions": [
+                            {
+                                "type": "context",
+                                "config": {
+                                    "key": "AddPredictiveTaskData",
+                                    "data": "rawFormData",
+                                    "requestMethod": "add"
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "context",
+                                "config": {
+                                    "key": "isNewPredictiveTask",
+                                    "data": true,
+                                    "requestMethod": "add"
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "context",
+                                "config": {
+                                    "key": "createNewPredictiveTask",
+                                    "data": true,
+                                    "requestMethod": "add"
+                                },
+                                "eventSource": "click"
+                            },
+                            {
+                                "type": "microservice",
+                                "eventSource": "click",
+                                "config": {
+                                    "microserviceId": "commonClassPredictionData",
+                                    "requestMethod": "post",
+                                    "isLocal": false,
+                                    "LocalService": "assets/Responses/getHPFAHistory.json",
+                                    "body": {
+                                        "item_num": "#getPartModelAndWarrentyDetails.MODEL_NUMBER",
+                                        "defect_parent": "#dellDebugNewAddDefectGroupName",
+                                        "defect_child": "#dellDebugAddPredictiveUnqNumber",
+                                        "service_tag": "#discrepancyUnitInfo.SERIAL_NO"
+                                    },
+                                    "toBeStringified": true
+                                },
+                                "responseDependents": {
+                                    "onSuccess": {
+                                        "actions": [
+                                            {
+                                                "type": "context",
+                                                "config": {
+                                                    "requestMethod": "add",
+                                                    "key": "commonClassPredictionData",
+                                                    "data": "responseData"
+                                                },
+                                                "eventSource": "change"
+                                            },
+                                            {
+                                                "type": "handleDellDebugPredictionActions",
+                                                "methodType": "handleDebugAcceptActions",
+                                                "eventSource": "click",
+                                                "isNewPredictiveTask": true,
+                                                "DefectGroupOptions": "#getDefectGroupList",
+                                                "DefectCodeOptions": "#filteredDefectsBasedOnDefectGroup.possible_defect_child",
+                                                "Defectgroup": "#dellDebugNewAddDefectGroupName",
+                                                "DefectCode": "#dellDebugAddPredictiveUnqNumber"
+                                            }
+                                        ]
+                                    },
+                                    "onFailure": {
+                                        "actions": [
+                                            {
+                                                "type": "context",
+                                                "config": {
+                                                    "requestMethod": "add",
+                                                    "key": "commonClassPredictionData",
+                                                    "data": []
+                                                },
+                                                "eventSource": "change"
+                                            },
+                                            {
+                                                "type": "handleDellDebugPredictionActions",
+                                                "methodType": "handleDebugAcceptActions",
+                                                "eventSource": "click",
+                                                "isNewPredictiveTask": true,
+                                                "DefectGroupOptions": "#getDefectGroupList",
+                                                "DefectCodeOptions": "#filteredDefectsBasedOnDefectGroup.possible_defect_child",
+                                                "Defectgroup": "#dellDebugNewAddDefectGroupName",
+                                                "DefectCode": "#dellDebugAddPredictiveUnqNumber"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "footer": [
+            {
+                "ctype": "toolbar",
+                "toolbarClass": "pagecontent-footer",
+                "items": [
+                    {
+                        "ctype": "iconbutton",
+                        "iconButtonClass": "footer-save body",
+                        "text": "Save & Exit",
+                        "uuid": "dellCarDebugSaveUUID",
+                        "visibility": true,
+                        "disabled": false,
+                        "type": "submit",
+                        "hooks": [],
+                        "validations": [],
+                        "icon": "save",
+                        "actions": []
+                    },
+                    {
+                        "ctype": "iconText",
+                        "uuid": "dellCarDebugIconUUID",
+                        "icon": "add_comment",
+                        "disabled": false,
+                        "text": "Add Note",
+                        "textCss": "",
+                        "iconPosition": "Before",
+                        "iconTextClass": "footer-addNote body",
+                        "actions": [
+                            {
+                                "type": "dialog",
+                                "uuid": "dellDebugAddNoteDialogUUID",
+                                "config": {
+                                    "title": "Add Note",
+                                    "items": [
+                                        {
+                                            "ctype": "textarea",
+                                            "name": "addNote",
+                                            "textareaClass": "note-class",
+                                            "uuid": "addNoteUUID",
+                                            "required": true,
+                                            "disabled": false,
+                                            "value": "#timeoutNotes.addNote",
+                                            "actions": [
+                                                {
+                                                    "type": "updateComponent",
+                                                    "config": {
+                                                        "key": "dellDebugDoneButtonUUID",
+                                                        "properties": {
+                                                            "disabled": false
+                                                        }
+                                                    },
+                                                    "eventSource": "onLoad"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "footer": [
+                                        {
+                                            "ctype": "button",
+                                            "color": "primary",
+                                            "text": "Cancel",
+                                            "uuid": "cancelHoldUUID",
+                                            "closeType": "close",
+                                            "disableClose": true,
+                                            "visibility": true,
+                                            "disabled": false,
+                                            "dialogButton": true,
+                                            "type": "",
+                                            "hooks": [],
+                                            "validations": [],
+                                            "actions": []
+                                        },
+                                        {
+                                            "ctype": "button",
+                                            "color": "primary",
+                                            "text": "Done",
+                                            "uuid": "doneaddnoteUUID",
+                                            "dialogButton": true,
+                                            "visibility": true,
+                                            "disabled": true,
+                                            "type": "submit",
+                                            "closeType": "success",
+                                            "hooks": [],
+                                            "validations": [],
+                                            "actions": []
+                                        }
+                                    ]
+                                },
+                                "eventSource": "click"
+                            }
+                        ]
+                    },
+                    {
+                        "ctype": "spacer",
+                        "uuid": "emptySpaceUUID",
+                        "class": "empty-space"
+                    },
+                    {
+                        "ctype": "iconbutton",
+                        "uuid": "dellDebugPauseUUID",
+                        "visibility": true,
+                        "disabled": false,
+                        "type": "submit",
+                        "hooks": [],
+                        "validations": [],
+                        "icon": "pause",
+                        "iconClass": "footer-btnas"
+                    },
+                    {
+                        "ctype": "nativeDropdown",
+                        "dropdownClass": "footer-dropdown dropdown-container body2",
+                        "uuid": "CiscoDebugSubAssmUUID",
+                        "name": "ResultCodes",
+                        "code": "value",
+                        "displayValue": "value",
+                        "dataSource": "#sanniData",
+                        "visibility": true
+                    },
+                    {
+                        "ctype": "button",
+                        "color": "primary",
+                        "text": "Time Out",
+                        "class": "primary-btn",
+                        "uuid": "dellAssemblyMessageButtonSubmittedUUID",
+                        "type": "submit",
+                        "buttonClass": "footer-button"
+                    }
+                ]
+            }
+        ]
+    },
+    "Result": "SUCCESS"
+}
